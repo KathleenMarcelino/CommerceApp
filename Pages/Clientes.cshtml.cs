@@ -18,6 +18,17 @@ namespace CommerceApp.Pages
 
         }
 
-    }
+        public void deleteCliete(int id)
+        {
+
+			Cliente cliente = new Cliente();
+
+			cliente.deleteCliete(id);
+
+            Response.Redirect("https://localhost:7146/Clientes");
+		}
+
+
+	}
 }
 

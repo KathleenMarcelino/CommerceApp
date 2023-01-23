@@ -39,12 +39,29 @@ namespace CommerceApp.Models
 			return clienteList;
         }
 
-        public void OnGet()
-        {
-           
-            
-            
+        public void saveCliente(string name, string email)
+		{
+			string connectionString = "Data Source=LAPTOP-34KSHRJA;Initial Catalog=commerce;Integrated Security=True;TrustServerCertificate=True;";
+			SqlConnection con = new SqlConnection(connectionString);
+			con.Open();
 
-        }
-    }
+			string sqlQuery = "INSERT INTO clientes (Name, Email) VALUES ('"+name+"', '"+email+"')";
+			SqlCommand cmd = new SqlCommand(sqlQuery, con);
+			int result = cmd.ExecuteNonQuery();
+			con.Close();
+
+		}
+
+		public void deleteCliete(int id)
+		{
+			string connectionString = "Data Source=LAPTOP-34KSHRJA;Initial Catalog=commerce;Integrated Security=True;TrustServerCertificate=True;";
+			SqlConnection con = new SqlConnection(connectionString);
+			con.Open();
+
+			string sqlQuery = "DELETE FROM clientes where id="+id;
+			SqlCommand cmd = new SqlCommand(sqlQuery, con);
+			int result = cmd.ExecuteNonQuery();
+			con.Close();
+		}
+	}
 }
