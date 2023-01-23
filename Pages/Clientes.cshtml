@@ -1,0 +1,42 @@
+﻿@page
+@model CommerceApp.Pages.ClientesModel
+@{
+	ViewData["Title"] = "Clientes";
+}
+<div>
+
+	<h1>Cliente</h1>
+
+	<p>CLiente informações</p>
+
+	<table class="table">
+
+		<thead>
+
+			<tr>
+
+				<th>Nome</th>
+				<th>E-mail</th>
+
+			</tr>
+		</thead>
+
+		<tbody>
+
+			@foreach (var clientes in Model.ClientesList)
+			{
+				
+				<tr>
+
+					<td>@clientes.Name</td>
+					<td>@clientes.Email</td>
+
+				</tr>
+
+			}
+
+		</tbody>
+
+	</table>
+
+</div>
