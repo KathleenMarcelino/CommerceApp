@@ -5,38 +5,27 @@
 }
 <div>
 
-	<h1>Cliente</h1>
+	<h1>Clientes</h1>
 
-	<p>CLiente informações</p>
+	<p>Informações de Clientes</p>
 
 	<table class="table">
-
 		<thead>
-
 			<tr>
-
+				<th>Id</th>
 				<th>Nome</th>
 				<th>E-mail</th>
-
 			</tr>
 		</thead>
-
 		<tbody>
-
-			@foreach (var clientes in Model.ClientesList)
+			@foreach (var cliente in Model.clienteList)
 			{
-				
 				<tr>
-
-					<td>@clientes.Name</td>
-					<td>@clientes.Email</td>
-
+					<td>@cliente.Id</td>
+					<td>@cliente.Name</td>
+					<td>@cliente.Email</td>
 				</tr>
-
 			}
-
 		</tbody>
-
 	</table>
-
 </div>

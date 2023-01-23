@@ -7,17 +7,17 @@ namespace CommerceApp.Pages
 {
     public class ClientesModel : PageModel
     {
-        public List<Clientes> ClientesList = new List<Clientes>;
+        public List<Cliente> clienteList = new List<Cliente>();
        
         public void OnGet()
         {
-            Clientes clientes = new Clientes();
+            Cliente cliente = new Cliente();
 
-            ClientesList = clientes.GetClientes();
+            clienteList = cliente.GetClientes();
 
-
-        }
 
         }
+
     }
+}
 
